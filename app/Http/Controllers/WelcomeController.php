@@ -1,5 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+use App\Books;
+use Illuminate\Support\Facades\App;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -30,7 +33,10 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
+        $booksObj = new Books();
+        $booksArray = $booksObj->getAllBooks();
+        $data['books'] = $booksArray;
+		return view('learning/books', $data);
 	}
 
 }
