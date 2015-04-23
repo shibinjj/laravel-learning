@@ -27,7 +27,7 @@ class WelcomeController extends Controller {
 	}
 
 	/**
-	 * Show the application welcome screen to the user.
+	 * Displayed a list of books saved in an sqlite DB
 	 *
 	 * @return Response
 	 */
