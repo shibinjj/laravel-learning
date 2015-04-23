@@ -29,7 +29,7 @@ class PagesController extends Controller {
 
     public function contact()
     {
-        $name = "Ajay Arjunan";
+        $name = "Ajay Arjunan (<span style='color:red;'>Black Mamba</span>)";
         $address = "Lorem ipsum dolor sit amet,<br>consectetur adipiscing elit,<br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
         return view('contact.contact')->with('name', $name)->with('address', $address);
     }
