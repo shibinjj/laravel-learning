@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -12,6 +11,20 @@
 */
 
 Route::get('/', 'WelcomeController@index');
+
+Route::get('hello', function()
+{
+	return 'Hello World';
+});
+
+Route::get('basic', function()
+{
+	return 'Basic GET Route. This route simply accept a URI and a Closure';
+});
+
+Route::get('greeting/{user}', 'LearningController@helloWorld');
+
+Route::get('hello-world','LearningController@helloWorld');
 
 Route::get('home', 'HomeController@index');
 
