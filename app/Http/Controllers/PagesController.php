@@ -27,6 +27,13 @@ class PagesController extends Controller {
 		//
 	}
 
+    public function contact()
+    {
+        $name = "Ajay Arjunan";
+        $address = "Lorem ipsum dolor sit amet,<br>consectetur adipiscing elit,<br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+        return view('contact.contact')->with('name', $name)->with('address', $address);
+    }
+
 	/**
 	 * Store a newly created resource in storage.
 	 *
