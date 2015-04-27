@@ -15,6 +15,13 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+Route::get('learning/display', 'LearningController@index');
+
+Route::get('learning/register', 'LearningController@register');
+
+Route::post('learning/register', 'LearningController@register');
+
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

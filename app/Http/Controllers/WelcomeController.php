@@ -33,10 +33,7 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-        $booksObj = new Books();
-        $booksArray = $booksObj->getAllBooks();
-        $data['books'] = $booksArray;
-		return view('learning/books', $data);
+        return view('welcome');
 	}
 
 }
