@@ -19,6 +19,8 @@ Route::get('hello', 'HelloWorldController@index');
 
 Route::get('contact', 'PagesController@contact');
 
+Route::get('people', 'PagesController@people');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

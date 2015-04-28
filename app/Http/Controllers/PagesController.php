@@ -36,6 +36,12 @@ class PagesController extends Controller {
                                               'title'    => 'Contact']);
     }
 
+    public function people()
+    {
+        $people = array( "Ajay", "Shibin", "Alex", "Devis", "Sachin", "Prince" );
+        return view('people')->with(['people' => $people, "title" => "People"]);
+    }
+
 	/**
 	 * Store a newly created resource in storage.
 	 *
