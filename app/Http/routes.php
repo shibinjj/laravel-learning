@@ -21,7 +21,6 @@ Route::get('contact', 'PagesController@contact');
 
 Route::get('people', 'PagesController@people');
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+Route::get('register', 'UsersController@register');
+
+Route::post('user/save', 'UsersController@save');
