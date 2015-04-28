@@ -24,9 +24,9 @@ Route::get('basic', function()
 
 Route::get('greeting/{user}', 'LearningController@helloWorld');
 
-Route::get('hello-world','LearningController@helloWorld');
-
 Route::get('home', 'HomeController@index');
+
+Route::any('getName','LearningController@getName');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
