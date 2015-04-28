@@ -2,8 +2,13 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\User;
 use \Input;
 use \Validator;
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Contracts\Auth\Registrar;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Hash;
 
 use Illuminate\Http\Request;
 
@@ -54,9 +59,19 @@ class UsersController extends Controller {
                 'address'               => 'required|string'
             ]
         );
-        if ($validator->fails())
-        {
+        if ($validator->fails()){
             return view('auth.register')->with(["title" => "Register"])->withErrors($validator);
+        }elseif($userDetails['password'] !== $userDetails['password_confirmation']){
+            return view('auth.register')->with(["title" => "Register", "error" => "Passwords don't match"]);
+        }else{
+            $user = new User();
+            $user->first_name = $userDetails['first_name'];
+            $user->last_name  = $userDetails['last_name'];
+            $user->email      = $userDetails['email'];
+            $user->password   = Hash::make($userDetails['password']);
+            $user->address    = $userDetails['address'];
+            $user->save();
+            return view('auth.register')->with(["title" => "Register"]);
         }
 	}
 
